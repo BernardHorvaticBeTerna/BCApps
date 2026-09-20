@@ -213,7 +213,7 @@ codeunit 6102 "E-Doc. Export"
         EDocumentProcessing.ModifyEDocumentStatus(EDocument);
     end;
 
-    internal procedure ExportEDocument(var EDocument: Record "E-Document"; var EDocumentService: Record "E-Document Service") Success: Boolean
+    procedure ExportEDocument(var EDocument: Record "E-Document"; var EDocumentService: Record "E-Document Service") Success: Boolean
     var
         TempEDocMapping: Record "E-Doc. Mapping" temporary;
         EDocLog: Record "E-Document Log";
@@ -288,7 +288,7 @@ codeunit 6102 "E-Doc. Export"
         CreateEDocumentBatch(EDocService, EDocuments, SourceDocumentHeaderMapped, SourceDocumentLineMapped, TempBlob);
     end;
 
-    internal procedure Recreate(EDocument: Record "E-Document"; EDocService: Record "E-Document Service")
+    procedure Recreate(EDocument: Record "E-Document"; EDocService: Record "E-Document Service")
     begin
         ExportEDocument(EDocument, EDocService);
     end;
